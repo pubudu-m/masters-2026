@@ -10,6 +10,14 @@ import SwiftUI
 struct FilmDetailsView: View {
     let film: Film
     
+    @State private var savedFilmIDs: [String] = []
+    
+    private var isSaved: Bool {
+        savedFilmIDs.contains(film.id)
+    }
+    
+    let userDefaultsKey = "FavouriteFilms"
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
@@ -18,9 +26,22 @@ struct FilmDetailsView: View {
                     .containerRelativeFrame(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text(film.title)
-                        .font(.title)
-                        .bold()
+                    HStack {
+                        Text(film.title)
+                            .font(.title)
+                            .bold()
+                        
+                        Spacer()
+                        
+                        Button {
+                            toggleSaveState()
+                        } label: {
+                            Image(systemName: isSaved ? "heart.fill" : "heart")
+                                .font(.title)
+                                .foregroundStyle(.pink)
+                        }
+
+                    }
                     
                     gridView
                     
@@ -34,6 +55,9 @@ struct FilmDetailsView: View {
                 .padding()
             }
         }
+        .onAppear {
+            loadSavedFilms()
+        }
     }
     
     private var gridView: some View {
@@ -44,6 +68,20 @@ struct FilmDetailsView: View {
             CustomKeyValueView(key: "Running time", value: "\(film.duration) minutes")
             CustomKeyValueView(key: "Score", value: "\(film.score)/100")
         }
+    }
+    
+    private func loadSavedFilms() {
+        savedFilmIDs = UserDefaults.standard.stringArray(forKey: userDefaultsKey) ?? []
+    }
+    
+    private func toggleSaveState() {
+        if isSaved {
+            savedFilmIDs.removeAll { $0 == film.id }
+        } else {
+            savedFilmIDs.append(film.id)
+        }
+        
+        UserDefaults.standard.set(savedFilmIDs, forKey: userDefaultsKey)
     }
 }
 

@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @State var dashboardViewModel = DashboardViewModel(networkService: NetworkService())
+    @State var favouritesViewModel = FavouritesViewModel()
+    
     var body: some View {
         TabView {
-            DashboardView()
+            DashboardView(dashboardViewModel: dashboardViewModel,
+                          favouritesViewModel: favouritesViewModel)
                 .tabItem {
                     Label("Dashboard", systemImage: "house")
                 }
             
-            FavouritesView()
+            FavouritesView(dashboardViewModel: dashboardViewModel,
+                           favouritesViewModel: favouritesViewModel)
                 .tabItem {
                     Label("Favourites", systemImage: "heart")
                 }
