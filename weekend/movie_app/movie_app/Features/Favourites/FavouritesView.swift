@@ -30,6 +30,6 @@ struct FavouritesView: View {
 }
 
 #Preview {
-    FavouritesView(dashboardViewModel: DashboardViewModel(),
-                   favouritesViewModel: FavouritesViewModel())
+    FavouritesView(dashboardViewModel: DashboardViewModel(networkService: NetworkService()),
+                   favouritesViewModel: FavouritesViewModel(localDataStoreService: LocalDataStorageService()))
 }

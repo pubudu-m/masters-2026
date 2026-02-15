@@ -30,5 +30,5 @@ struct DashboardView: View {
 
 #Preview {
     DashboardView(dashboardViewModel: DashboardViewModel(networkService: NetworkService()),
-                  favouritesViewModel: FavouritesViewModel())
+                  favouritesViewModel: FavouritesViewModel(localDataStoreService: LocalDataStorageService()))
 }

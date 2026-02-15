@@ -14,11 +14,18 @@ class FavouritesViewModel {
     var savedFilmIDs: [String] = []
     private let userDefaultsKey = "FavouriteFilms"
     
-    init() {
-        loadSavedFilms()
+    var localDataStoreService: LocalDataStorageService
+    
+    init(localDataStoreService: LocalDataStorageService) {
+        self.localDataStoreService = localDataStoreService
+        loadData()
     }
     
-    private func loadSavedFilms() {
-        savedFilmIDs = UserDefaults.standard.stringArray(forKey: userDefaultsKey) ?? []
+    func loadData() {
+        savedFilmIDs = localDataStoreService.load()
+    }
+    
+    func saveData() {
+        localDataStoreService.save(data: [])
     }
 }

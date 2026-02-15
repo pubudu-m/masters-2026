@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @State var dashboardViewModel = DashboardViewModel(networkService: NetworkService())
-    @State var favouritesViewModel = FavouritesViewModel()
+    @State var favouritesViewModel = FavouritesViewModel(localDataStoreService: LocalDataStorageService())
     
     var body: some View {
         TabView {
