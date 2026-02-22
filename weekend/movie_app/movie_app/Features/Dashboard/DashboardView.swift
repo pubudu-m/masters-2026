@@ -13,9 +13,22 @@ struct DashboardView: View {
     
     var body: some View {
         NavigationStack {
-            List(dashboardViewModel.films) { film in
-                NavigationLink(value: film) {
-                    CustomFilmItemView(film: film)
+            Group {
+                switch dashboardViewModel.state {
+                case .idle:
+                    Text("No films yet")
+                    
+                case .loading:
+                    ProgressView {
+                        Text("Loading...")
+                    }
+                    
+                case .success(let films):
+                    createFilms(films: films)
+                    
+                case .failure(let errorMsg):
+                    Text(errorMsg)
+                        .foregroundStyle(.red)
                 }
             }
             .task {
@@ -24,6 +37,14 @@ struct DashboardView: View {
             .navigationTitle("My Movies")
             .navigationDestination(for: Film.self) { film in
                 FilmDetailsView(film: film, favouritesViewModel: favouritesViewModel)
+            }
+        }
+    }
+    
+    private func createFilms(films: [Film]) -> some View {
+        List(films) { film in
+            NavigationLink(value: film) {
+                CustomFilmItemView(film: film)
             }
         }
     }

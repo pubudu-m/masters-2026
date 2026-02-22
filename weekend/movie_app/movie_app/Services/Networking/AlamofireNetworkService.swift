@@ -11,6 +11,7 @@ import Alamofire
 class AlamofireNetworkService: NetworkService {
     func fetch<T: Decodable>(url: String, type: T.Type) async throws -> T {
         do {
+            try? await Task.sleep(nanoseconds: 1000_000_000)
             return try await AF.request(url).serializingDecodable(T.self).value
         } catch let error as AFError {
             if error.isInvalidURLError {

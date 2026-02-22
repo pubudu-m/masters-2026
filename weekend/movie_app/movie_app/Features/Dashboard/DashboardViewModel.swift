@@ -11,19 +11,21 @@ import Observation
 @MainActor
 @Observable
 class DashboardViewModel {
-    var films: [Film]
     var networkService: NetworkService
+    var state: LoadingState<[Film]> = .idle
     
     init(networkService: NetworkService) {
-        self.films = []
         self.networkService = networkService
     }
     
     func fetchMovies() async {
+        state = .loading
+        
         do {
-            films = try await networkService.fetch(url: "https://ghibliapi.vercel.app/films", type: [Film].self)
+            let films = try await networkService.fetch(url: "https://ghibliapi.vercel.app/films", type: [Film].self)
+            state = .success(films)
         } catch {
-            print("Something went wrong")
+            state = .failure("Something went wrong")
         }
     }
 }

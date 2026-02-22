@@ -12,7 +12,14 @@ struct FavouritesView: View {
     var favouritesViewModel: FavouritesViewModel
     
     var favoriteFilms: [Film] {
-        dashboardViewModel.films.filter { favouritesViewModel.savedFilmIDs.contains($0.id) }
+        let favouritesIDs = favouritesViewModel.savedFilmIDs
+        
+        switch dashboardViewModel.state {
+        case .success(let films):
+            return films.filter { favouritesIDs.contains($0.id) }
+        default:
+            return []
+        }
     }
     
     var body: some View {
