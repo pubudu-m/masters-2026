@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct FavouritesView: View {
+    var dashboardViewModel: DashboardViewModel
+    var favouritesViewModel: FavouritesViewModel
+    
+    var favouriteFilms: [Film] {
+        dashboardViewModel.films.filter { favouritesViewModel.savedFilmIDs.contains($0.id) }
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List(favouriteFilms) { film in
+                NavigationLink(value: film) {
+                    CustomFilmItemView(film: film)
+                }
+            }
+            .navigationDestination(for: Film.self) { film in
+                FilmDetailsView(film: film)
+            }
+            .onAppear {
+                favouritesViewModel.loadData()
+            }
+        }
     }
 }
 
 #Preview {
-    FavouritesView()
+    FavouritesView(dashboardViewModel: DashboardViewModel(), favouritesViewModel: FavouritesViewModel())
 }

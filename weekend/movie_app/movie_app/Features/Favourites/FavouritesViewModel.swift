@@ -11,12 +11,12 @@ import Observation
 @MainActor
 @Observable
 class FavouritesViewModel {
-    var savedFilmIDs: [String] = []
+    var savedFilmIDs: Set<String> = []
     private let userDefaultsKey = "FavouriteFilms"
     
-    var localDataStoreService: LocalDataStorageService
+    var localDataStoreService: DataStorageService
     
-    init(localDataStoreService: LocalDataStorageService) {
+    init(localDataStoreService: DataStorageService) {
         self.localDataStoreService = localDataStoreService
         loadData()
     }
@@ -26,6 +26,20 @@ class FavouritesViewModel {
     }
     
     func saveData() {
-        localDataStoreService.save(data: [])
+        localDataStoreService.save(data: savedFilmIDs)
+    }
+    
+    func isSaved(filmId: String) -> Bool {
+        return savedFilmIDs.contains(filmId)
+    }
+    
+    func toggleSaveState(filmId: String) {
+        if savedFilmIDs.contains(filmId) {
+            savedFilmIDs.remove(filmId)
+        } else {
+            savedFilmIDs.insert(filmId)
+        }
+        
+        saveData()
     }
 }

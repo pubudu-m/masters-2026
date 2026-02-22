@@ -23,13 +23,13 @@ struct FavouritesView: View {
                 }
             }
             .navigationDestination(for: Film.self) { film in
-                FilmDetailsView(film: film)
+                FilmDetailsView(film: film, favouritesViewModel: favouritesViewModel)
             }
         }
     }
 }
 
 #Preview {
-    FavouritesView(dashboardViewModel: DashboardViewModel(networkService: NetworkService()),
+    FavouritesView(dashboardViewModel: DashboardViewModel(networkService: MyNetworkService()),
                    favouritesViewModel: FavouritesViewModel(localDataStoreService: LocalDataStorageService()))
 }

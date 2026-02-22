@@ -20,6 +20,10 @@ class DashboardViewModel {
     }
     
     func fetchMovies() async {
-        films = await networkService.fetchMovies()
+        do {
+            films = try await networkService.fetch(url: "https://ghibliapi.vercel.app/films", type: [Film].self)
+        } catch {
+            print("Something went wrong")
+        }
     }
 }

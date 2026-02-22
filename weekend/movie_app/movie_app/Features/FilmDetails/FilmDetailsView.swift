@@ -9,15 +9,12 @@ import SwiftUI
 
 struct FilmDetailsView: View {
     let film: Film
-    
-    @State private var savedFilmIDs: [String] = []
+    let favouritesViewModel: FavouritesViewModel
     
     private var isSaved: Bool {
-        savedFilmIDs.contains(film.id)
+        favouritesViewModel.isSaved(filmId: film.id)
     }
-    
-    let userDefaultsKey = "FavouriteFilms"
-    
+        
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
@@ -34,7 +31,7 @@ struct FilmDetailsView: View {
                         Spacer()
                         
                         Button {
-                            toggleSaveState()
+                            favouritesViewModel.toggleSaveState(filmId: film.id)
                         } label: {
                             Image(systemName: isSaved ? "heart.fill" : "heart")
                                 .font(.title)
@@ -55,9 +52,8 @@ struct FilmDetailsView: View {
                 .padding()
             }
         }
-        .onAppear {
-            loadSavedFilms()
-        }
+        .navigationTitle(film.title)
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     private var gridView: some View {
@@ -69,22 +65,8 @@ struct FilmDetailsView: View {
             CustomKeyValueView(key: "Score", value: "\(film.score)/100")
         }
     }
-    
-    private func loadSavedFilms() {
-        savedFilmIDs = UserDefaults.standard.stringArray(forKey: userDefaultsKey) ?? []
-    }
-    
-    private func toggleSaveState() {
-        if isSaved {
-            savedFilmIDs.removeAll { $0 == film.id }
-        } else {
-            savedFilmIDs.append(film.id)
-        }
-        
-        UserDefaults.standard.set(savedFilmIDs, forKey: userDefaultsKey)
-    }
 }
 
 #Preview {
-    FilmDetailsView(film: .example)
+    FilmDetailsView(film: .example, favouritesViewModel: FavouritesViewModel(localDataStoreService: LocalDataStorageService()))
 }

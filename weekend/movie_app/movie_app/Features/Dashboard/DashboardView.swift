@@ -21,14 +21,15 @@ struct DashboardView: View {
             .task {
                 await dashboardViewModel.fetchMovies()
             }
+            .navigationTitle("My Movies")
             .navigationDestination(for: Film.self) { film in
-                FilmDetailsView(film: film)
+                FilmDetailsView(film: film, favouritesViewModel: favouritesViewModel)
             }
         }
     }
 }
 
 #Preview {
-    DashboardView(dashboardViewModel: DashboardViewModel(networkService: NetworkService()),
+    DashboardView(dashboardViewModel: DashboardViewModel(networkService: MyNetworkService()),
                   favouritesViewModel: FavouritesViewModel(localDataStoreService: LocalDataStorageService()))
 }
