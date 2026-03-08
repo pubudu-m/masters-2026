@@ -6,46 +6,41 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		98BDEDF22F507DF500AA6F11 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 98BDEDF12F507DF500AA6F11 /* Alamofire */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		98D61A602F3E0210002C0833 /* movie_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movie_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9862F3372F5D27D70032998A /* iTourDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTourDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		98D61A622F3E0210002C0833 /* movie_app */ = {
+		9862F3392F5D27D70032998A /* iTourDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = movie_app;
+			path = iTourDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		98D61A5D2F3E0210002C0833 /* Frameworks */ = {
+		9862F3342F5D27D70032998A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98BDEDF22F507DF500AA6F11 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		98D61A572F3E0210002C0833 = {
+		9862F32E2F5D27D70032998A = {
 			isa = PBXGroup;
 			children = (
-				98D61A622F3E0210002C0833 /* movie_app */,
-				98D61A612F3E0210002C0833 /* Products */,
+				9862F3392F5D27D70032998A /* iTourDemo */,
+				9862F3382F5D27D70032998A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		98D61A612F3E0210002C0833 /* Products */ = {
+		9862F3382F5D27D70032998A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98D61A602F3E0210002C0833 /* movie_app.app */,
+				9862F3372F5D27D70032998A /* iTourDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,68 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		98D61A5F2F3E0210002C0833 /* movie_app */ = {
+		9862F3362F5D27D70032998A /* iTourDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98D61A6B2F3E0212002C0833 /* Build configuration list for PBXNativeTarget "movie_app" */;
+			buildConfigurationList = 9862F3422F5D27D90032998A /* Build configuration list for PBXNativeTarget "iTourDemo" */;
 			buildPhases = (
-				98D61A5C2F3E0210002C0833 /* Sources */,
-				98D61A5D2F3E0210002C0833 /* Frameworks */,
-				98D61A5E2F3E0210002C0833 /* Resources */,
+				9862F3332F5D27D70032998A /* Sources */,
+				9862F3342F5D27D70032998A /* Frameworks */,
+				9862F3352F5D27D70032998A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				98D61A622F3E0210002C0833 /* movie_app */,
+				9862F3392F5D27D70032998A /* iTourDemo */,
 			);
-			name = movie_app;
+			name = iTourDemo;
 			packageProductDependencies = (
-				98BDEDF12F507DF500AA6F11 /* Alamofire */,
 			);
-			productName = movie_app;
-			productReference = 98D61A602F3E0210002C0833 /* movie_app.app */;
+			productName = iTourDemo;
+			productReference = 9862F3372F5D27D70032998A /* iTourDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		98D61A582F3E0210002C0833 /* Project object */ = {
+		9862F32F2F5D27D70032998A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
-					98D61A5F2F3E0210002C0833 = {
+					9862F3362F5D27D70032998A = {
 						CreatedOnToolsVersion = 26.0;
 					};
 				};
 			};
-			buildConfigurationList = 98D61A5B2F3E0210002C0833 /* Build configuration list for PBXProject "movie_app" */;
+			buildConfigurationList = 9862F3322F5D27D70032998A /* Build configuration list for PBXProject "iTourDemo" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 98D61A572F3E0210002C0833;
+			mainGroup = 9862F32E2F5D27D70032998A;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				98BDEDF02F507DF500AA6F11 /* XCRemoteSwiftPackageReference "Alamofire" */,
-			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 98D61A612F3E0210002C0833 /* Products */;
+			productRefGroup = 9862F3382F5D27D70032998A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				98D61A5F2F3E0210002C0833 /* movie_app */,
+				9862F3362F5D27D70032998A /* iTourDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		98D61A5E2F3E0210002C0833 /* Resources */ = {
+		9862F3352F5D27D70032998A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		98D61A5C2F3E0210002C0833 /* Sources */ = {
+		9862F3332F5D27D70032998A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -134,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		98D61A692F3E0212002C0833 /* Debug */ = {
+		9862F3402F5D27D90032998A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -197,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		98D61A6A2F3E0212002C0833 /* Release */ = {
+		9862F3412F5D27D90032998A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -253,7 +244,7 @@
 			};
 			name = Release;
 		};
-		98D61A6C2F3E0212002C0833 /* Debug */ = {
+		9862F3432F5D27D90032998A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -272,7 +263,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nz.co.ceynext.movie-app";
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.ceynext.iTourDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -284,7 +275,7 @@
 			};
 			name = Debug;
 		};
-		98D61A6D2F3E0212002C0833 /* Release */ = {
+		9862F3442F5D27D90032998A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -303,7 +294,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nz.co.ceynext.movie-app";
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.ceynext.iTourDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -318,44 +309,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		98D61A5B2F3E0210002C0833 /* Build configuration list for PBXProject "movie_app" */ = {
+		9862F3322F5D27D70032998A /* Build configuration list for PBXProject "iTourDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98D61A692F3E0212002C0833 /* Debug */,
-				98D61A6A2F3E0212002C0833 /* Release */,
+				9862F3402F5D27D90032998A /* Debug */,
+				9862F3412F5D27D90032998A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98D61A6B2F3E0212002C0833 /* Build configuration list for PBXNativeTarget "movie_app" */ = {
+		9862F3422F5D27D90032998A /* Build configuration list for PBXNativeTarget "iTourDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98D61A6C2F3E0212002C0833 /* Debug */,
-				98D61A6D2F3E0212002C0833 /* Release */,
+				9862F3432F5D27D90032998A /* Debug */,
+				9862F3442F5D27D90032998A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		98BDEDF02F507DF500AA6F11 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.11.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		98BDEDF12F507DF500AA6F11 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 98BDEDF02F507DF500AA6F11 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 98D61A582F3E0210002C0833 /* Project object */;
+	rootObject = 9862F32F2F5D27D70032998A /* Project object */;
 }

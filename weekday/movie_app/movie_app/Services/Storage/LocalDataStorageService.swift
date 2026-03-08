@@ -7,6 +7,11 @@
 
 import Foundation
 
+protocol DataStorageService {
+    func load() -> [String]
+    func save(data: [String])
+}
+
 struct LocalDataStorageService {
     let userDefaultsKey = "FavouriteFilms"
     
@@ -17,4 +22,8 @@ struct LocalDataStorageService {
     func save(data: [String]) {
         UserDefaults.standard.set(data, forKey: userDefaultsKey)
     }
+}
+
+struct SqliteDB {
+    
 }
